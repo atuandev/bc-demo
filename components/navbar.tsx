@@ -67,7 +67,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="relative mx-auto flex h-20 w-full max-w-[1512px] items-center justify-between px-4 py-[24px] sm:px-6 lg:px-[86px]">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md mx-auto flex h-20 w-full max-w-[1512px] items-center justify-between px-4 py-[24px] sm:px-6 lg:px-[86px]">
       {/* Logo */}
       <Link href="/" className="shrink-0">
         <Image src="/Logo-v2.svg" alt="Logo" width={120} height={32} />
@@ -163,12 +163,16 @@ export function Navbar() {
         className="flex p-2 text-foreground lg:hidden"
         aria-label="Toggle menu"
       >
-        {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+        {mobileMenuOpen ? (
+          <X className="size-6" />
+        ) : (
+          <Menu className="size-6" />
+        )}
       </button>
 
       {/* Mobile Menu Drawer/Overlay */}
       {mobileMenuOpen && (
-        <div className="absolute top-full right-0 left-0 z-50 flex flex-col gap-4 border-b bg-background px-6 py-6 shadow-xl lg:hidden">
+        <div className="absolute top-full right-0 left-0 z-50 flex max-h-[calc(100vh-5rem)] flex-col gap-4 overflow-y-auto border-b bg-background px-6 py-6 shadow-xl lg:hidden">
           <ul className="flex flex-col gap-2">
             {navItems.map((item) => (
               <li key={item.label} className="flex flex-col">
@@ -191,26 +195,28 @@ export function Navbar() {
                         )}
                       />
                     </button>
-                    {mobileDropdownOpen === item.label && item.dropdownItems && (
-                      <div className="flex flex-col gap-2 pl-4 pb-2">
-                        {item.dropdownItems.map((subItem, idx) => (
-                          <Link
-                            key={idx}
-                            href={subItem.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className={cn(
-                              "flex items-center gap-2 py-1 text-sm text-foreground/80",
-                              subItem.isBold && "font-semibold text-foreground",
-                            )}
-                          >
-                            {subItem.label}
-                            {subItem.hasArrow && (
-                              <ArrowRight className="size-3.5" />
-                            )}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    {mobileDropdownOpen === item.label &&
+                      item.dropdownItems && (
+                        <div className="flex flex-col gap-2 pl-4 pb-2">
+                          {item.dropdownItems.map((subItem, idx) => (
+                            <Link
+                              key={idx}
+                              href={subItem.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={cn(
+                                "flex items-center gap-2 py-1 text-sm text-foreground/80",
+                                subItem.isBold &&
+                                  "font-semibold text-foreground",
+                              )}
+                            >
+                              {subItem.label}
+                              {subItem.hasArrow && (
+                                <ArrowRight className="size-3.5" />
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                   </div>
                 ) : (
                   <Link
