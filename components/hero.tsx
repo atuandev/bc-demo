@@ -50,14 +50,14 @@ export function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[30px] font-bold leading-[1.2] tracking-tight sm:text-[38px] lg:text-[44px]">
+            <h1 className="text-[30px] font-bold leading-[1.2] tracking-tight sm:text-[38px] lg:text-[44px] tracking-wide">
               Quản lý dễ dàng,
               <br />
               bán hàng hiệu quả
             </h1>
 
             {/* Description */}
-            <p className="mt-1 max-w-[500px] text-sm leading-relaxed text-foreground/80 sm:text-base lg:mt-2">
+            <p className="mt-1 max-w-[520px] text-sm text-foreground/80 lg:mt-2 tracking-tight">
               Chào mừng bạn đến với Xứ sở thần tiên. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua.

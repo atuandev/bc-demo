@@ -21,7 +21,7 @@ const buttonVariants = cva(
         primary:
           "bg-[#BFFB4F] text-black hover:bg-[#a8e040] focus-visible:border-[#BFFB4F]/60 focus-visible:ring-[#BFFB4F]/30",
         black:
-          "bg-black text-white hover:bg-black/80 focus-visible:border-black/60 focus-visible:ring-black/30 font-semibold",
+          "bg-[#2D2F33] text-white hover:bg-[#2D2F33]/80 focus-visible:border-[#2D2F33]/60 focus-visible:ring-[#2D2F33]/30 font-semibold",
       },
       size: {
         default:
