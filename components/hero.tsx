@@ -24,6 +24,14 @@ export function Hero() {
             priority
             className="object-cover object-center"
           />
+          {/* Gradient overlay at bottom of image */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[40px]"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(250, 250, 245, 0) 0%, rgba(250, 250, 245, 0.4565) 20%, rgba(250, 250, 245, 0.6967) 40%, rgba(250, 250, 245, 0.7951) 60%, rgba(250, 250, 245, 0.899) 80%, #FAFAF5 100%)",
+            }}
+          />
         </div>
 
         {/* Desktop Background Image */}
