@@ -1,4 +1,4 @@
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter, Manrope } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
 })
 
 export default function RootLayout({
@@ -24,6 +29,7 @@ export default function RootLayout({
       className={cn(
         "antialiased",
         fontMono.variable,
+        manrope.variable,
         "font-sans",
         inter.variable,
       )}
