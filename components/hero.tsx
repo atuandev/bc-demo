@@ -97,7 +97,7 @@ export function Hero() {
             onClick={() => setActiveSlide(index)}
             aria-label={`Slide ${index + 1}`}
             className={cn(
-              "h-[2px] cursor-pointer transition-all duration-300",
+              "h-1 sm:h-[2px] cursor-pointer transition-all duration-300",
               index === activeSlide
                 ? "w-[60px] bg-black"
                 : "w-[24px] bg-[#D9D9D9] hover:bg-black/40",
